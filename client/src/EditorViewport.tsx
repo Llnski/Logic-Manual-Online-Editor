@@ -17,7 +17,7 @@ import { useWindowDimensions } from './window_width'
 import { config } from './config/config'
 
 
-const App: React.FC = () => {
+const EditorViewport: React.FC = () => {
   const [restart, setRestart] = useState()
 
   /* Vertical layout is changeable in the settings.
@@ -120,7 +120,7 @@ const App: React.FC = () => {
     })
   }
 
-  return (
+  return ( //Very important, web structure part
     <div className={`app ${theme}-theme`}>
       <div className='nav'>
         <Logo className='logo' />
@@ -131,24 +131,9 @@ const App: React.FC = () => {
             <FontAwesomeIcon icon={faArrowRotateRight} /> Restart server
           </span>
           {/* <Version /> */}
-          <span className="nav-link" onClick={save}>
-            <FontAwesomeIcon icon={faDownload} /> Save file
-          </span>
-          <label htmlFor="file-upload" className="nav-link">
-            <FontAwesomeIcon icon={faUpload} /> Load file from disk
-          </label>
           <LoadUrl loadFromUrl={loadFromUrl} />
           <input id="file-upload" type="file" onChange={loadFileFromDisk} />
           <PrivacyPolicy />
-          <a className="nav-link" href="https://leanprover-community.github.io/" target="_blank">
-            <FontAwesomeIcon icon={faArrowUpRightFromSquare} /> Lean community
-          </a>
-          <a className="nav-link" href="https://leanprover.github.io/lean4/doc/" target="_blank">
-            <FontAwesomeIcon icon={faArrowUpRightFromSquare} /> Lean documentation
-          </a>
-          <a className="nav-link" href="https://github.com/hhu-adam/lean4web" target="_blank">
-            <FontAwesomeIcon icon={faArrowUpRightFromSquare} /> GitHub
-          </a>
         </div>
         <div className={"nav-icon"} onClick={(ev) => {setNavOpen(!navOpen)}}>
           {navOpen ? <FontAwesomeIcon icon={faXmark} /> : <FontAwesomeIcon icon={faBars} />}
@@ -162,4 +147,4 @@ const App: React.FC = () => {
   )
 }
 
-export default App
+export default EditorViewport
