@@ -1,2 +1,8 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<!--This is where content goes -->
+<script lang = "ts">
+    import EditorViewport from "./../client/src/EditorViewport.tsx";
+</script>
+
+<h1>This is my LEAN website</h1>
+<react:EditorViewport/>
+
